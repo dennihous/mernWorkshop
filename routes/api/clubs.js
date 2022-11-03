@@ -6,6 +6,8 @@ const router = express.Router();
 // Load Club model
 const Club = require('../../models/Club');
 
+const ClubController = require('../../controllers/club.controller')
+
 // @route GET api/clubs/test
 // @description tests clubs route
 // @access Public
@@ -14,11 +16,13 @@ router.get('/test', (req, res) => res.send('club route testing!'));
 // @route GET api/clubs
 // @description Get all clubs
 // @access Public
-router.get('/', (req, res) => {
-  Club.find()
-    .then(club => res.json({clubs: clubs}))
-    .catch(err => res.status(404).json({ noclubsfound: 'No Club found' }));
-});
+// router.get('/', (req, res) => {
+//   Club.find()
+//     .then(club => res.json({clubs: clubs}))
+//     .catch(err => res.status(404).json({ noclubsfound: 'No Club found' }));
+// });
+
+router.get('/', ClubController.findAll)
 
 // @route GET api/clubs/:id
 // @description Get single club by id
