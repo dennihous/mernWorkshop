@@ -16,7 +16,7 @@ router.get('/test', (req, res) => res.send('club route testing!'));
 // @access Public
 router.get('/', (req, res) => {
   Club.find()
-    .then(club => res.json(clubs))
+    .then(club => res.json({clubs: clubs}))
     .catch(err => res.status(404).json({ noclubsfound: 'No Club found' }));
 });
 
