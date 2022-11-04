@@ -1,5 +1,3 @@
-
-
 {
   "mongoURI": "mongodb+srv://dennihous:Proteam4@cluster0.qqi6glg.mongodb.net/test?retryWrites=true&w=majority"
 }
