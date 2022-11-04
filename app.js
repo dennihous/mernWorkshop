@@ -3,6 +3,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const bp = require('body-parser');
+var cors = require('cors');
 
 // routes
 const clubs = require('./routes/api/clubs')
@@ -11,6 +12,9 @@ const app = express();
 
 // Connect Database
 connectDB();
+
+// cors
+app.use(cors({ origin: true, credentials: true }));
 
 // use body-parser
 app.use(bp.json());
