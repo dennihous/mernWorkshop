@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const BookSchema = new mongoose.Schema({
+const ClubSchema = new mongoose.Schema({
   name: String,
   type: String,
   description: String,
@@ -14,4 +14,4 @@ const BookSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = Book = mongoose.model('book', BookSchema);
+module.exports = Club = mongoose.model('club', ClubSchema);
